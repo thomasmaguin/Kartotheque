@@ -8,6 +8,7 @@
 
 	body.is-preload #bg:before {
 		background-color: transparent;
+		background="images/Mercantour_3d.png"
 	}
 
 /* Header */
