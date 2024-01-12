@@ -279,6 +279,13 @@
 										<li><input type="submit" value="Envoyer" class="primary" /></li>
 										<li><input type="reset" value="Réinitialiser" /></li>
 									</ul>
+									<php
+									if (isset($_POST['message'])) {
+										$retour = mail('destinataire@free.fr', 'Envoi depuis la page Contact', $_POST['message'], 'From: webmaster@monsite.fr' . "\r\n" . 'Reply-to: ' . $_POST['email']);
+										if($retour)
+										
+									}
+									?>
 								</form>
 								<ul class="icons">
 									<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
@@ -287,6 +294,8 @@
 									<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
 								</ul>
 							</article>
+
+							<!DOCTYPE html>
 
 						<!-- Elements -->
 							<article id="elements">
