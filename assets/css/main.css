@@ -1659,3 +1659,10 @@ input, select, textarea {
 		body.is-preload #footer {
 			opacity: 0;
 		}
+
+		img:active
+{
+   transform: scale(1.4);
+   transition: 0.5s;
+}
+
