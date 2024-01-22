@@ -401,3 +401,42 @@
 					});
 
 })(jQuery);
+
+
+var slideIndex = [1, 1];
+ 
+for (let i = 1; i <= slideIndex.length; i++) {
+  showSlides(i, 1);
+}
+ 
+function plusSlides(slideshowNumber, n) {
+  slideIndex[slideshowNumber - 1] += n;
+  showSlides(slideshowNumber, slideIndex[slideshowNumber - 1]);
+}
+function currentSlide(slideshowNumber, n) {
+  slideIndex[slideshowNumber - 1] = n;
+  showSlides(slideshowNumber, slideIndex[slideshowNumber - 1]);
+}
+function showSlides(slideshowNumber, n) {
+  var i;
+  var slides = document.querySelectorAll(
+    ".slideshow-" + slideshowNumber + " .mySlides"
+  );
+  var dots = document.querySelectorAll(
+    ".slideshow-" + slideshowNumber + " .dot"
+  );
+  if (n > slides.length) {
+    slideIndex[slideshowNumber - 1] = 1;
+  }
+  if (n < 1) {
+    slideIndex[slideshowNumber - 1] = slides.length;
+  }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex[slideshowNumber - 1] - 1].style.display = "block";
+  dots[slideIndex[slideshowNumber - 1] - 1].className += " active";
+}
